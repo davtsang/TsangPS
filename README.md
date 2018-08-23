@@ -51,6 +51,9 @@ all standard tufte-handout options are also passable
 
  	You can use the command \SetAnswerFlip{true} in order to change to 
  	upside down answers, or \SetAnswerFlip{false} in order to change back
+	
+	\makeline makes a thin horizontal line that (using \cleaders) that is not drawn if it occurs at 
+	the beginning and end of the page
 
  # The Question environment
  
