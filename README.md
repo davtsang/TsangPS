@@ -18,7 +18,6 @@ you can call a document class
 
 	FlipAns : short answers for problem sheet are rotated by 180 degrees
 
-	accessible : switch to all sans serif fonts
 
 Alternatively you can use definitions before \documentclass to set command line
 multi-file options
@@ -26,8 +25,6 @@ multi-file options
 	\def\problemsheet{}  in order to set problemsheet
 
 	\def\flipanswer{} in order to set FlipAns
-
-	\def\accessible{} in order to set accessible options
 
 all standard tufte-handout options are also passable
 
