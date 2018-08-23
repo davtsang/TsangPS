@@ -12,22 +12,22 @@ you can call a document class
 
 # Class Options:
 
-solutions : shows full worked solutions, no checkboxes,
+	solutions : shows full worked solutions, no checkboxes,
 
-problemsheet : only the problems with revision checkboxes in margin, short answers are  shown in margin
+	problemsheet : only the problems with revision checkboxes in margin, short answers are  shown in margin
 
-FlipAns : short answers for problem sheet are rotated by 180 degrees
+	FlipAns : short answers for problem sheet are rotated by 180 degrees
 
-accessible : switch to all sans serif fonts
+	accessible : switch to all sans serif fonts
 
 Alternatively you can use definitions before \documentclass to set command line
 multi-file options
 
-\def\problemsheet{}  in order to set problemsheet
+	\def\problemsheet{}  in order to set problemsheet
 
-\def\flipanswer{} in order to set FlipAns
+	\def\flipanswer{} in order to set FlipAns
 
-\def\accessible{} in order to set accessible options
+	\def\accessible{} in order to set accessible options
 
 all standard tufte-handout options are also passable
 
@@ -35,22 +35,22 @@ all standard tufte-handout options are also passable
 
 # Class Commands:
 
-\unittitle{TITLE} - sets the unit title i.e. Vibrations, Waves, and Optics
+	\unittitle{TITLE} - sets the unit title i.e. Vibrations, Waves, and Optics
 
-\unitcode{CODE} - sets the unit code i.e. PHYS10005/53
+	\unitcode{CODE} - sets the unit code i.e. PHYS10005/53
 
-\lecturer is not currently included, but could be
+	\lecturer is not currently included, but could be
 
-\setnumber{NUMBER} sets the problem set number in the title/headings
+	\setnumber{NUMBER} sets the problem set number in the title/headings
 
-\logo[offset]{PATH} sets the path to the logo file to load next to the title
-you can use the offset in length units (cm, pts etc) in order
-to shift the image up or down 
+	\logo[offset]{PATH} sets the path to the logo file to load next to the title
+	you can use the offset in length units (cm, pts etc) in order
+	to shift the image up or down 
 
-\semester{SEMESTER} sets the semester value, i.e. Semester I, 2018-2019
+	\semester{SEMESTER} sets the semester value, i.e. Semester I, 2018-2019
 
- You can use the command \SetAnswerFlip{true} in order to change to 
- upside down answers, or \SetAnswerFlip{false} in order to change back
+ 	You can use the command \SetAnswerFlip{true} in order to change to 
+ 	upside down answers, or \SetAnswerFlip{false} in order to change back
 
  # The Question environment
  
