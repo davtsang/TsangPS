@@ -6,9 +6,16 @@
 Built on the tufte-handout class
 
 Using TsangPS.cls and TsangPS.sty
-you can call a document class
+you can call the document class
 
 \documentclass{TsangPS}
+
+# Samples
+Examples
+![problem sheet example](ProbSheet.png "Problem Sheet Example")
+![solution set example](SolSheet.png "Solution Set Example")
+
+
 
 # Class Options:
 
