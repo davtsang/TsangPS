@@ -1,0 +1,307 @@
+%
+% Tsang Problem Set Class/Style TsangPS v 1.0
+% 18/08/22 - D.Tsang@soton.ac.uk
+%
+% Built on the tufte-handout class
+%
+% Using TsangPS.cls and TsangPS.sty
+% you can call a document class
+%
+% \documentclass{TsangPS}
+%
+% with options:
+% solutions : shows full worked solutions, no checkboxes, 
+% problemsheet : only the problems with revision checkboxes in margin, short answers are
+%                          shown in margin
+% FlipAns : short answers for problem sheet are rotated by 180 degrees
+% accessible : switch to all sans serif fonts
+%
+% Alternatively you can use definitions before \documentclass to set command line
+% multi-file options
+%
+% \def\problemsheet{}  in order to set problemsheet
+% \def\flipanswer{} in order to set FlipAns
+% \def\accessible{} in order to set accessible options
+%
+% all standard tufte-handout options are also passable
+%
+%
+%
+% Class Commands:
+% \unittitle{TITLE} - sets the unit title i.e. Vibrations, Waves, and Optics
+% \unitcode{CODE} - sets the unit code i.e. PHYS10005/53
+% \lecturer is not currently included, but could be
+% \setnumber{NUMBER} sets the problem set number in the title/headings 
+% \logo[offset]{PATH} sets the path to the logo file to load next to the title
+% you can use the offset in length units (cm, pts etc) in order to shift the image up
+% or down 
+% \semester{SEMESTER} sets the semester value, i.e. Semester I, 2018-2019
+%
+% You can use the command \SetAnswerFlip{true} in order to change to 
+% upside down answers, or \SetAnswerFlip{false} in order to change back
+%
+% The Question environment
+%\begin{question}{TITLE}{TYPE}{DIFFICULTY}{EXAM}
+%...
+%\solution{}{}
+%\end{question}
+%
+% Adds in checkmarks for Tried, Correct, Revised in margin next to problem
+% title
+
+%
+% a TikZ box is available for long asides using
+% \begin{mybox}[width=WIDTH]{TITLE}
+%    ...
+% \end{mybox}
+%
+%\solution{FULL SOL}{SHORT ANS}
+% Solutions have second argument printed [Ans: #2] upside down in the 
+% margin of the problem sheet
+% and #1 only shown in the solutions set.
+% if no margin answers are wanted on the problem sheet just use an empty second arg
+%
+%
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{TsangPS}[2018/08/23 Tsang Problem Set Sheet and Solutions]
+
+
+
+
+
+\RequirePackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\RequirePackage{amsmath, amsthm, amssymb}  % extended mathematics
+\RequirePackage{booktabs} % book-quality tables
+\RequirePackage{units}    % non-stacked fractions and better unit spacing
+\RequirePackage{multicol} % multiple column layout facilities
+\RequirePackage{lipsum}   % filler text
+\RequirePackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
+
+\RequirePackage{microtype} % Improves character and word spacing
+
+\RequirePackage{booktabs} % Better horizontal rules in tables
+
+\RequirePackage{graphicx} % Needed to insert images into the document
+
+%\graphicspath{{figures/}} % Sets the default location of pictures
+\RequirePackage{lipsum} %Filler text package, only needed for typesetting examples
+\RequirePackage{enumitem} %some nicer features for enumerated lists
+\RequirePackage{subfig} %needed to horizontally stack figures
+\RequirePackage{cancel} %packaged needed for cancelto arrows
+\RequirePackage{mathtools}
+
+\RequirePackage{ifthen}
+\RequirePackage{ifmtarg}
+\RequirePackage{tikz}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{multicol}
+
+
+\definecolor{LightOcean}{RGB}{81, 147, 229 }
+\definecolor{DeepOcean}{RGB}{51, 131, 229}
+\newcounter{myboxcount}   
+
+\newcommand{\pagewidth}{\textwidth+\marginparwidth+10mm}
+
+\newtcolorbox[auto counter, number within=chapter]{mybox}[2][]{%
+%    float, 
+%    floatplacement=h!,
+    enhanced, 
+%    colback=LightOcean!10, 
+    colback=white,
+    colframe=DeepOcean,
+    %show bounding box,
+    notitle,
+    %grow to right by=\marginparsep+\marginparwidth,%,-15mm,
+    toggle enlargement=evenpage,
+    breakable,fonttitle=\bfseries, 
+    title= \Large{\textbf{#2}},
+    #1
+}
+\usepackage{calc}% http://ctan.org/pkg/calc
+
+\newboolean{@logobool} 
+\setboolean{@logobool}{false}
+\newboolean{FlipAnsBool}
+\newlength{\logoshift}
+
+\def\unittitle#1{\gdef\theunittitle{#1}}
+\def\unitcode#1{\gdef\theunitcode{#1}}
+\def\lecturer#1{\gdef\thelecturer{#1}}
+\def\setnumber#1{\gdef\thesetnumber{#1}}
+\newcommand{\logo}[2][0cm]{%
+	\gdef\thelogo{#2}
+	\setboolean{@logobool}{true}
+	\ifthenelse{\isempty{#1}}{%
+		\setlength{\logoshift}{-1.72cm}
+	}%
+	{%
+		\setlength{\logoshift}{- 1.72cm}
+		\addtolength{\logoshift}{#1}
+	}%
+}%
+\def\semester#1{\gdef\thesemester{#1}}
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+% Needed for stars
+\RequirePackage{wasysym}
+
+%\newcommand\insq[1]{%
+%    \Square\ #1\quad%
+%}
+
+%
+% The main counter is Problem
+% solutions is a boolean we use to keep track of if this is a 
+% a solution set or a problem sheet
+
+\newcounter{Problem}
+\newboolean{solutions} 
+
+% This is so that you can pass the problemsheet in as a command line option
+% or using a dummy input file.
+%\def\problemsheet
+% Can also pass "problemsheet" option in in the document class
+% or "solutions" to set these explicitly
+\ifdefined\problemsheet
+	\setboolean{solutions}{false}
+\else 
+	\setboolean{solutions}{true}
+\fi
+%
+% pass a defined \flipanswer for the solutions to be flipped
+%
+\ifdefined\flipanswer
+	\setboolean{FlipAnsBool}{true}
+\else 
+	\setboolean{FlipAnsBool}{false}
+\fi
+
+\newcommand{\SetAnswerFlip}[1]{
+	\setboolean{FlipAnsBool}{#1}
+}
+
+
+\titlespacing\section{0pt}{-0.3cm plus 0pt minus 0pt}{0.2cm plus 2pt minus 2pt}
+
+%
+% Make \emph bold and italic
+%
+%
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\bfseries\em}
+
+\newcommand{\newq}[1]{\noindent\smallcaps{#1}}
+
+%
+% question environment
+%\begin{question}{TITLE}{TYPE}{DIFFICULTY}{EXAM}
+%...
+%\solution{}{}
+%\end{question}
+%
+% Adds in checkmarks for Tried, Correct, Revised in margin next to problem
+% title
+%
+
+\newenvironment{question}[4]{%
+\ifthenelse{\boolean{solutions}}{}
+{\pagebreak[3] %put a pagebreak preferentially here, 
+% so that problems tend to sit at the top of the page
+\marginnote[0.25cm]{\rightline{
+\makebox[1.5cm][r]{$\Square$ Tried}
+\makebox[1.5cm][r]{$\Square$ Correct}
+\makebox[1.5cm][r]{$\Square$ Revised}
+}
+}
+}
+%
+\refstepcounter{Problem}%
+\section*{\textnormal{Problem \theProblem: #1  }\textnormal{[%
+\ifnumcomp{#2}{=}{1}{\mbox{knowledge}}{%
+\ifnumcomp{#2}{=}{2}{\mbox{comprehension}}{%
+\ifnumcomp{#2}{=}{3}{\mbox{application}}{%
+\ifnumcomp{#2}{=}{4}{\mbox{analysis}}{%
+\ifnumcomp{#2}{=}{5}{\mbox{synthesis}}{\mbox{evaluation}}%
+}}}}, %
+\ifnumcomp{#3}{=}{1}{\mbox{$\bigstar$}}{%
+\ifnumcomp{#3}{=}{2}{\mbox{$\bigstar\bigstar$}}{\mbox{$\bigstar\bigstar\bigstar$}}}%
+\ifnumcomp{#4}{=}{1}{, \mbox{past exam}]}{]}
+} 
+}%
+}%
+
+%
+% Solutions have second argument printed [Ans: #2] upside down in the 
+% margin of the problem sheet
+% and #1 only shown in the solutions set.
+%
+% if no margin answers are wanted on the problem sheet just use an empty second arg
+%
+\newcommand\solution[2]{%
+	\ifthenelse{\boolean{solutions}}{
+	
+	\vspace{0.25cm}
+	\color{blue}{#1}\color{black}
+	}{
+	\ifthenelse{\isempty{#2}}{}{
+		\ifthenelse{\boolean{FlipAnsBool}}{
+			\marginnote{\rotatebox[origin=c]{180}{
+				\begin{minipage}[t]{\linewidth}[\emph{Ans:} #2]\end{minipage}}
+				}
+			}
+		{\marginnote{{\begin{minipage}[]{\linewidth}\hfill[\emph{Ans:} #2]\end{minipage}}}}
+	}
+}}%
+
+
+% puts in a line, except at the top and bottom of the page (uses a TeX hack where 
+% "glue" is ignored at the top and bottom of a page, so the line is hidden inside the 
+% "glue". 
+\def\makeline{\pagebreak[3]
+	\vskip 0.5cm
+	\cleaders\hrule width1.5375\hsize\vskip.4pt\vskip1em
+  	 \nobreak\vskip 0.5cm \relax
+}
+
+
+%No date provided, if date desired either set explicitly or remove command for current date
+%\date{}
+%
+% Put in university logo if provided
+%
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{
+	%
+	% if solutions then one title
+	% if problem set then another
+	%
+	\ifthenelse{\boolean{solutions}}{
+		\title[Problem Set \thesetnumber ~Solutions---]{\theunitcode ~ \theunittitle}
+		\author[Problem Set \thesetnumber~Solutions]{Problem Set~\thesetnumber  ~Solutions,~\thesemester}
+		}{
+		\title[Problem Set~\thesetnumber---]{\theunitcode~\theunittitle}
+		\author[Problem Set~\thesetnumber]{Problem Set~\thesetnumber,~\thesemester}
+		}
+	\ifthenelse{\boolean{@logobool}}{
+		\oldmaketitle \marginnote[\logoshift]{\includegraphics{\thelogo}}}{\oldmaketitle}}
+
+%
+% Sets up the enumerate environment to be (a), (b)..., tighter, 
+% also be offset by 1cm from the left margin
+%
+\setlist[enumerate]{label=(\alph*), itemsep=0.1cm, topsep=0.1cm, leftmargin=1cm, align=left, labelwidth=0.5cm}
+
