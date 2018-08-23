@@ -33,7 +33,7 @@ all standard tufte-handout options are also passable
 
 
 
-#Class Commands:
+# Class Commands:
 
 \unittitle{TITLE} - sets the unit title i.e. Vibrations, Waves, and Optics
 
@@ -66,6 +66,8 @@ Adds in checkmarks for Tried, Correct, Revised in margin next to problem
 
 
  a TikZ box is available for long asides using
+ 
+ # Questions and Solutions
  
  \begin{mybox}[width=WIDTH]{TITLE}
  
