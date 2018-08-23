@@ -11,7 +11,6 @@ you can call the document class
 \documentclass{TsangPS}
 
 # Samples
-Examples
 ![problem sheet example](ProbSheet.png "Problem Sheet Example")
 ![solution set example](SolSheet.png "Solution Set Example")
 
