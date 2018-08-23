@@ -52,8 +52,9 @@ to shift the image up or down
  You can use the command \SetAnswerFlip{true} in order to change to 
  upside down answers, or \SetAnswerFlip{false} in order to change back
 
- The Question environment
-        \begin{question}{TITLE}{TYPE}{DIFFICULTY}{EXAM}
+ # The Question environment
+ 
+ 	\begin{question}{TITLE}{TYPE}{DIFFICULTY}{EXAM}
 	
 		...
 		
@@ -67,15 +68,18 @@ Adds in checkmarks for Tried, Correct, Revised in margin next to problem
 
  a TikZ box is available for long asides using
  
- # Questions and Solutions
  
- \begin{mybox}[width=WIDTH]{TITLE}
  
-    ...
+	 \begin{mybox}[width=WIDTH]{TITLE}
+ 
+ 	   ...
     
- \end{mybox}
+	 \end{mybox}
 
-\solution{FULL SOL}{SHORT ANS}
+# Solutions
+
+	\solution{FULL SOL}{SHORT ANS}
+
 
  Solutions have second argument printed [Ans: #2] upside down in the 
  margin of the problem sheet
