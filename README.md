@@ -38,7 +38,7 @@ multi-file options
 	\def\flipanswer{} in order to set FlipAns
 Note that the class options will override these defs if they conflict. 
 
-all standard tufte-handout options are also passable, (i.e. for UK problem sets I use options "a4paper, openany")
+All standard tufte-handout options are also passable, (i.e. for UK problem sets I use options "a4paper, openany")
 
 
 
@@ -87,11 +87,11 @@ where TYPE is 0-5 which specify:
 	
 	2 : comprehension
 	
-	3: application
+	3 : application
 	
-	4: analysis
+	4 : analysis
 	
-	5: synthesis
+	5 : synthesis
 	
 The Diffuclty is 1-3, which specifies the number of $\bigstar$ symbols to indicate difficulty
 
@@ -103,9 +103,9 @@ If the EXAM argument is set to 1, the past exam indicator will appear.
 	\solution{FULL SOL}{SHORT ANS}
 
 
- Solutions have second argument printed [Ans: #2] (upside down if FlipAns is set) in the 
+ Solutions have second argument printed [Ans: SHORT ANS] (upside down if FlipAns is set) in the 
  margin of the problem sheet
- and #1 only shown in the solutions set.
+ and FULL SOL only shown in the solutions set (with textcolor set to blue).
  
  If no margin answers are wanted on the problem sheet just use an empty second argument, i.e.,
  
