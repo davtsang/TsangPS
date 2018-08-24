@@ -1,6 +1,6 @@
 # TsangPS
 
-# Tsang Problem Set Class/Style TsangPS v 1.0
+# Dave's Problem Set Class/Style TsangPS v 1.0
 18/08/22 - D.Tsang@soton.ac.uk
 
 Built on the tufte-handout class
