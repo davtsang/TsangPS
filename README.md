@@ -58,7 +58,7 @@ all standard tufte-handout options are also passable
 	\makeline makes a thin horizontal line that (using \cleaders) that is not drawn if it occurs at 
 	the beginning and end of the page
 
- # The Question environment
+ # The question environment
  
  	\begin{question}{TITLE}{TYPE}{DIFFICULTY}{EXAM}
 	
@@ -68,19 +68,26 @@ all standard tufte-handout options are also passable
 		
 	\end{question}
 	
-Adds in checkmarks for Tried, Correct, Revised in margin next to problem
- title
+Use Problem counter to label the problems, adds in checkmarks for Tried, Correct, Revised in margin next to problem
+ title. Problem heading of the form:
+ 	Problem \theProblem: TITLE [type(TYPE), $\bigstar$...(, past exam)] 
+where TYPE is 0-5 which specify:
+	0 : evaluation
+	
+	1 : knowledge
+	
+	2 : comprehension
+	
+	3: application
+	
+	4: analysis
+	
+	5: synthesis
+	
+The Diffuclty is 1-3, which specifies the number of $\bigstar$ symbols to indicate difficulty
 
+If the EXAM argument is set to 1, the past exam indicator will appear.
 
- a TikZ box is available for long asides using
- 
- 
- 
-	 \begin{mybox}[width=WIDTH]{TITLE}
- 
- 	   ...
-    
-	 \end{mybox}
 
 # Solutions
 
@@ -92,4 +99,16 @@ Adds in checkmarks for Tried, Correct, Revised in margin next to problem
  and #1 only shown in the solutions set.
  if no margin answers are wanted on the problem sheet just use an empty second arg
 
+
+
+# Boxes 
+ A TikZ box is available for long asides using
+ 
+ 
+ 
+	 \begin{mybox}[width=WIDTH]{TITLE}
+ 
+ 	   ...
+    
+	 \end{mybox}
 
