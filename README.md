@@ -70,7 +70,9 @@ all standard tufte-handout options are also passable
 	
 Use Problem counter to label the problems, adds in checkmarks for Tried, Correct, Revised in margin next to problem
  title. Problem heading of the form:
+ 
  	Problem \theProblem: TITLE [type(TYPE), $\bigstar$...(, past exam)] 
+	
 where TYPE is 0-5 which specify:
 	0 : evaluation
 	
