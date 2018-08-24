@@ -110,6 +110,7 @@ If the EXAM argument is set to 1, the past exam indicator will appear.
  
  	\solution{FULL SOL}{}
 
+Multipart questions are intended to have a \solution{}{} put in for each part within the enumerate \item{}, so that the short answer will appear in the correct location. 
 
 
 # Boxes 
