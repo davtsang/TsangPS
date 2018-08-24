@@ -7,8 +7,8 @@ David Tsang, University of Southampton/University of Bath
 Problem Set and Solution Sheet Template for LaTeX.
 Built on the tufte-handout class. 
 
-Using TsangPS.cls and TsangPS.sty
-you can call the document class
+To install: Place the files "TsangPS.cls" and "TsangPS.sty" in your local LaTeX directory
+you can then call the document class using:
 
 \documentclass[options...]{TsangPS}
 
