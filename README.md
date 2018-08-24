@@ -103,9 +103,9 @@ If the EXAM argument is set to 1, the past exam indicator will appear.
 	\solution{FULL SOL}{SHORT ANS}
 
 
- Solutions have second argument printed [Ans: #2] (upside down if FlipAns is set) in the 
+ Solutions have second argument printed [Ans: SHORT ANS] (upside down if FlipAns is set) in the 
  margin of the problem sheet
- and #1 only shown in the solutions set.
+ and FULL SOL only shown in the solutions set (with textcolor set to blue).
  
  If no margin answers are wanted on the problem sheet just use an empty second argument, i.e.,
  
