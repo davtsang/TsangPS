@@ -80,6 +80,7 @@ Use Problem counter to label the problems, adds in checkmarks for Tried, Correct
  	Problem \theProblem: TITLE [type(TYPE), $\bigstar$...(, past exam)] 
 	
 where TYPE is 0-5 which specify:
+
 	0 : evaluation
 	
 	1 : knowledge
