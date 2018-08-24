@@ -87,11 +87,11 @@ where TYPE is 0-5 which specify:
 	
 	2 : comprehension
 	
-	3: application
+	3 : application
 	
-	4: analysis
+	4 : analysis
 	
-	5: synthesis
+	5 : synthesis
 	
 The Diffuclty is 1-3, which specifies the number of $\bigstar$ symbols to indicate difficulty
 
