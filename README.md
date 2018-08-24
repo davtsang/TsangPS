@@ -12,6 +12,8 @@ you can then call the document class using:
 
 \documentclass[options...]{TsangPS}
 
+(See also Dave's Skeletal Course Notes Template https://github.com/davtsang/TsangNotes)
+
 # Samples
 ![problem sheet example](ProbSheet.png "Problem Sheet Example")
 ![solution set example](SolSheet.png "Solution Set Example")
