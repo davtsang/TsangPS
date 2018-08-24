@@ -1,14 +1,16 @@
 # TsangPS
 
-# Tsang Problem Set Class/Style TsangPS v 1.0
+# Dave's Problem Set LaTeX Class TsangPS v 1.0
 18/08/22 - D.Tsang@soton.ac.uk
+David Tsang, University of Southampton/University of Bath
 
-Built on the tufte-handout class
+Problem Set and Solution Sheet Template for LaTeX.
+Built on the tufte-handout class. 
 
-Using TsangPS.cls and TsangPS.sty
-you can call the document class
+To install: Place the files "TsangPS.cls" and "TsangPS.sty" in your local LaTeX directory
+you can then call the document class using:
 
-\documentclass{TsangPS}
+\documentclass[options...]{TsangPS}
 
 # Samples
 ![problem sheet example](ProbSheet.png "Problem Sheet Example")
@@ -24,6 +26,7 @@ you can call the document class
 
 	FlipAns : short answers for problem sheet are rotated by 180 degrees
 
+With no options set it defaults to the solutions behaviour. 
 
 Alternatively you can use definitions before \documentclass to set command line
 multi-file options
@@ -31,8 +34,9 @@ multi-file options
 	\def\problemsheet{}  in order to set problemsheet
 
 	\def\flipanswer{} in order to set FlipAns
+Note that the class options will override these defs if they conflict. 
 
-all standard tufte-handout options are also passable
+all standard tufte-handout options are also passable, (i.e. for UK problem sets I use options "a4paper, openany")
 
 
 
