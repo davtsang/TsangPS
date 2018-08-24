@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e} 
 \ProvidesClass{TsangPS}[2018/08/23 Tsang Problem Set v 1.0]
-\DeclareOption{problemsheet}{\def\problemsheet{true}}
+\DeclareOption{problemsheet}{\def\problemsheet{}}
 \DeclareOption{solutions}{\let\problemsheet\undefined}
-\DeclareOption{FlipAns}{\def\flipanswer{true}}
+\DeclareOption{FlipAns}{\def\flipanswer{}}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{tufte-handout}}
 \ProcessOptions\relax
