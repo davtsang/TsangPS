@@ -38,7 +38,7 @@ multi-file options
 	\def\flipanswer{} in order to set FlipAns
 Note that the class options will override these defs if they conflict. 
 
-all standard tufte-handout options are also passable, (i.e. for UK problem sets I use options "a4paper, openany")
+All standard tufte-handout options are also passable, (i.e. for UK problem sets I use options "a4paper, openany")
 
 
 
