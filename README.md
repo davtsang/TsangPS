@@ -4,7 +4,7 @@
 18/08/22 - D.Tsang@soton.ac.uk
 David Tsang, University of Southampton/University of Bath
 
-Problem Set and Solution Sheet Template for LaTeX.
+Problem Sheet and Solution Set Template for LaTeX.
 Built on the tufte-handout class. 
 
 To install: Place the files "TsangPS.cls" and "TsangPS.sty" in your local LaTeX directory
