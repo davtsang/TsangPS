@@ -93,7 +93,7 @@ where TYPE is 0-5 which specify:
 	
 	5 : synthesis
 	
-The Diffuclty is 1-3, which specifies the number of $\bigstar$ symbols to indicate difficulty
+The Difficulty is 1-3, which specifies the number of $\bigstar$ symbols to indicate difficulty
 
 If the EXAM argument is set to 1, the past exam indicator will appear.
 
